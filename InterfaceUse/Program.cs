@@ -2,10 +2,21 @@
 {
     class Program
     {
-        static void Main(string[] args)
+        //Class Program class depends on IMeasurable.
+        private static IMeasurable _measurable;
+
+        /*Constructor accepts parameters of the dependency object type.
+        These parameters can accept any concrete class objects that implements interfaces.
+        We are passing the object of class as a parameter to the constructor of the Program class = 
+        = injecting the dependency object through the constructor.*/
+        public Program(IMeasurable measurable)
         {
-            {
-                IMeasurable _measurable = new Measurable();
+            _measurable = measurable;
+        }
+
+        static void Main()
+        {
+               _measurable = new Measurable();
 
                 Country[] countries = new Country[] {
                     new Country("France", 640679),
@@ -30,4 +41,3 @@
             }
         }
     }
-}
