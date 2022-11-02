@@ -20,35 +20,13 @@
                     new Country("Canada", 9984670),
                 };
 
-                foreach (var country in countries)
-                {
-                    _measurable.DisplayListOfCountries(country);
-                }
+                _measurable.DispalyTheLargestCountryByArea(countries);
 
-                IEnumerable<Country> selectedTheLargestArea = countries.Where(c => c.AreaOfTheCountry == countries.Max(c => c.AreaOfTheCountry));
+                _measurable.DisplayListOfCountries(countries);
 
-                foreach (Country c in selectedTheLargestArea)
-                {
-                    _measurable.DispalyTheLargestCountryByArea(c);
-                }
+                _measurable.ArrangeDataByCountryName(countries);
 
-                IEnumerable<Country> arrangedByCountryName = countries.OrderBy(c => c.CountryName);
-
-                Console.WriteLine("Alphabetical list of the countries:");
-
-                foreach (Country c in arrangedByCountryName)
-                {
-                    _measurable.ArrangeDataByCountryName(c);
-                }
-
-                IEnumerable<Country> arrangedByAreaSize = countries.OrderBy(c => c.AreaOfTheCountry);
-
-                Console.WriteLine("\r\n" + "Sort countries in ascending order of the area:");
-
-                foreach (Country c in arrangedByAreaSize)
-                {
-                    _measurable.ArrangedCountryByAreaSize(c);
-                }
+                _measurable.ArrangeCountryByAreaSize(countries);
             }
         }
     }

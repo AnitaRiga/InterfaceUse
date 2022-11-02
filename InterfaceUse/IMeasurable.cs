@@ -2,9 +2,9 @@
 {
     public interface IMeasurable
     {
-        void DisplayListOfCountries(Country country);
-        void DispalyTheLargestCountryByArea(Country country);
-        void ArrangeDataByCountryName(Country country);
-        void ArrangedCountryByAreaSize(Country country);
+        void DispalyTheLargestCountryByArea(Country[] countries);
+        void DisplayListOfCountries(Country[] countries);
+        void ArrangeDataByCountryName(Country[] countries);
+        void ArrangeCountryByAreaSize(Country[] countries);
     }
 }
